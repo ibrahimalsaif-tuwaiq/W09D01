@@ -1,0 +1,58 @@
+.formCon {
+  height: 60%;
+  width: 30%;
+  border-radius: 1.75rem;
+  background-color: #d1efff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 6px 8px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 6px 8px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 8px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.formCon h1 {
+  font-size: 300%;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.message {
+  padding: 0.3rem 0.6rem;
+  border: 0.1rem black solid;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.801);
+  border-radius: 1.2rem;
+}
+
+.formInput {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formInput input {
+  height: 2.5rem;
+  width: 20rem;
+  padding: 0 1rem;
+  border-radius: 1.75rem;
+  border: none;
+}
+
+.submitButton {
+  height: 2.5rem;
+  width: 8rem;
+  font-size: 150%;
+  font-family: "Josefin Sans", sans-serif;
+  border: none;
+  border-radius: 1.75rem;
+  background-color: #2e2836;
+  color: white;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  background-color: #413d47;
+}

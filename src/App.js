@@ -5,6 +5,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import './App.css'
+require('dotenv').config()
 
 const App = () => {
   return (
