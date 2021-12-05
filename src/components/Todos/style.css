@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+.todosCon {
+  width: 30%;
+  padding: 2rem 1rem;
+  border-radius: 1.75rem;
+  background-color: #d1efff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 0.5rem black solid;
+}
+
+.addInput {
+  padding: 0.3rem 0.4rem;
+  margin-bottom: 2rem;
+  border-radius: 1.75rem;
+  border: none;
+}
+
+.add {
+  padding: 0.3rem 0.4rem;
+  margin: 0 0.3rem;
+  border-radius: 1.75rem;
+  border: none;
+  background-color: rgb(0, 60, 170);
+  color: white;
+}
+
+.add:hover {
+  cursor: pointer;
+}
+
+.list {
+  width: 80%;
+  height: 50%;
+}
+
+/* */
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3rem;
+}
+
+.listItem li {
+  font-size: 120%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.listItem button {
+  padding: 0.3rem;
+  margin: 0 0.2rem;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+}
+
+.listItem .update {
+  background-color: rgb(0, 107, 27);
+}
+
+.listItem .delete {
+  background-color: crimson;
+}
+
+.listItem button:hover {
+  cursor: pointer;
+}
