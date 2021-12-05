@@ -8,11 +8,13 @@
 }
 
 .dashboardLogo,
-.logoutLogo {
+.logoutLogo,
+.homeLogo {
   font-size: 180%;
 }
 
 .dashboardLogo:hover,
-.logoutLogo:hover {
+.logoutLogo:hover,
+.homeLogo:hover {
   cursor: pointer;
 }

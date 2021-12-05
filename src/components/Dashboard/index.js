@@ -46,7 +46,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <Navbar role={role} />
+      <Navbar role={role} page='Dashboard'/>
       <div className="wrapper">
         {!token ? (
           <h1>

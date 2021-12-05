@@ -95,7 +95,7 @@ const Todos = () => {
 
   return (
     <>
-      <Navbar role={role}/>
+      <Navbar role={role} page='Todos'/>
       <div className="wrapper">
         {!token ? (
           <h1>
