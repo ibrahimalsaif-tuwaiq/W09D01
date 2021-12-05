@@ -2,19 +2,23 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Navbar from "./../Navbar";
 import "./style.css";
 
 const Todos = () => {
   const navigate = useNavigate();
   const [token, setToken] = useState("");
+  const [role, setRole] = useState("");
   const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState("");
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    const Storgetoken = localStorage.getItem("token");
-    setToken(Storgetoken);
-    getTodos(Storgetoken);
+    const StorgeToken = localStorage.getItem("token");
+    setToken(StorgeToken);
+    const StorgeRole = localStorage.getItem("role");
+    setRole(StorgeRole);
+    getTodos(StorgeToken);
   }, []);
 
   const getTodos = async (token) => {
@@ -90,61 +94,56 @@ const Todos = () => {
     }
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
-  }
-
   return (
-    <div className="wrapper">
-      {!token ? (
-        <h1>
-          You are not logeddin yet, so <Link to="/login">login</Link> or
-          <Link to="/signup">signup</Link>
-        </h1>
-      ) : (
-        <div className="todosCon">
-          <div>
-            <input
-              className="addInput"
-              onChange={(e) => setTodo(e.target.value)}
-              placeholder="Add a new todo"
-            />
-            <button className="add" onClick={addTodo}>
-              ADD
-            </button>
-            <button className="add" onClick={logout}>
-              logout
-            </button>
-          </div>
-          {todos ? (
-            <ul className="list">
-              {todos.map((todo) => (
-                <div key={todo._id} className="listItem">
-                  <li>{todo.name}</li>
-                  <div>
-                    <button
-                      className="update"
-                      onClick={() => updateTodo(todo._id)}
-                    >
-                      Update
-                    </button>
-                    <button
-                      className="delete"
-                      onClick={() => deleteTodo(todo._id)}
-                    >
-                      Delete
-                    </button>
+    <>
+      <Navbar role={role}/>
+      <div className="wrapper">
+        {!token ? (
+          <h1>
+            You are not logeddin yet, so <Link to="/login">login</Link> or
+            <Link to="/signup">signup</Link>
+          </h1>
+        ) : (
+          <div className="todosCon">
+            <div>
+              <input
+                className="addInput"
+                onChange={(e) => setTodo(e.target.value)}
+                placeholder="Add a new todo"
+              />
+              <button className="add" onClick={addTodo}>
+                ADD
+              </button>
+            </div>
+            {todos ? (
+              <ul className="list">
+                {todos.map((todo) => (
+                  <div key={todo._id} className="listItem">
+                    <li>{todo.name}</li>
+                    <div>
+                      <button
+                        className="update"
+                        onClick={() => updateTodo(todo._id)}
+                      >
+                        Update
+                      </button>
+                      <button
+                        className="delete"
+                        onClick={() => deleteTodo(todo._id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </ul>
-          ) : (
-            <div className="message">{message}</div>
-          )}
-        </div>
-      )}
-    </div>
+                ))}
+              </ul>
+            ) : (
+              <div className="message">{message}</div>
+            )}
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
