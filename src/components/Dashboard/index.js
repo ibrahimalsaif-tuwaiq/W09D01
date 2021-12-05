@@ -3,7 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Navbar from "./../Navbar";
-import "./style.css";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -80,7 +79,7 @@ const Dashboard = () => {
             <Link to="/signup">signup</Link>
           </h1>
         ) : (
-          <div className="todosCon">
+          <div className="ItemsCon">
             {users && (
               <ul className="list">
                 {users.map((user) => (
@@ -88,7 +87,7 @@ const Dashboard = () => {
                     <li>{user.email}</li>
                     <div>
                       <button
-                        className="update"
+                        className="add"
                         onClick={() => navigate(`/users/${user._id}`)}
                       >
                         Show

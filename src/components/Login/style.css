@@ -2,7 +2,7 @@
   height: 60%;
   width: 30%;
   border-radius: 1.75rem;
-  background-color: #d1efff;
+  background-color: #EDF6F9;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -27,6 +27,7 @@
 
 .formInput {
   height: 40%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +36,7 @@
 
 .formInput input {
   height: 2.5rem;
-  width: 20rem;
+  width: 100%;
   padding: 0 1rem;
   border-radius: 1.75rem;
   border: none;
@@ -48,11 +49,11 @@
   font-family: "Josefin Sans", sans-serif;
   border: none;
   border-radius: 1.75rem;
-  background-color: #2e2836;
+  background-color: #006D77;
   color: white;
 }
 
 .submitButton:hover {
   cursor: pointer;
-  background-color: #413d47;
+  background-color: #0c95a1;
 }

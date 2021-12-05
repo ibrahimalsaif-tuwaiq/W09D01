@@ -2,15 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 body {
-  background: rgb(49, 132, 177);
+  background: rgb(131, 197, 190);
   background: linear-gradient(
     117deg,
-    rgba(49, 132, 177, 1) 19%,
-    rgba(163, 222, 255, 1) 93%,
-    rgba(209, 239, 255, 1) 100%
+    rgba(131, 197, 190, 1) 19%,
+    rgba(234, 255, 253, 1) 100%
   );
 }
 

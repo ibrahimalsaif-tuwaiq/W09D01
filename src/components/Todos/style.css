@@ -1,43 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
-
-.todosCon {
-  width: 30%;
+.ItemsCon {
+  width: 60%;
   padding: 2rem 1rem;
   border-radius: 1.75rem;
-  background-color: #d1efff;
+  background-color: #edf6f9;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 0.5rem black solid;
+  border: 0.2rem black solid;
 }
 
 .addInput {
   padding: 0.3rem 0.4rem;
   margin-bottom: 2rem;
-  border-radius: 1.75rem;
-  border: none;
+  border-radius: 0.5rem;
+  border: 0.1rem black solid;
 }
 
 .add {
   padding: 0.3rem 0.4rem;
   margin: 0 0.3rem;
-  border-radius: 1.75rem;
+  border-radius: 0.5rem;
   border: none;
-  background-color: rgb(0, 60, 170);
+  background-color: #006d77;
   color: white;
+  font-weight: bold;
 }
 
 .add:hover {
   cursor: pointer;
+  background-color: #158994;
 }
 
 .list {
   width: 80%;
   height: 50%;
+  list-style: none;
 }
-
-/* */
 
 .listItem {
   display: flex;
@@ -47,14 +46,14 @@
 
 .listItem li {
   font-size: 120%;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .listItem button {
   padding: 0.3rem;
   margin: 0 0.2rem;
   border: none;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   color: white;
 }
 
@@ -62,10 +61,15 @@
   background-color: rgb(0, 107, 27);
 }
 
+.listItem .update:hover {
+  background-color: rgb(13, 126, 41);
+  cursor: pointer;
+}
+
 .listItem .delete {
   background-color: crimson;
 }
-
-.listItem button:hover {
+.listItem .delete:hover {
+  background-color: rgb(143, 0, 29);
   cursor: pointer;
 }

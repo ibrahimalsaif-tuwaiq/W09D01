@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./../Navbar";
-import "./style.css";
 
 const User = () => {
   const { userId } = useParams();
@@ -64,7 +63,7 @@ const User = () => {
             <Link to="/signup">signup</Link>
           </h1>
         ) : (
-          <div className="todosCon">
+          <div className="ItemsCon">
             {todos ? (
               <ul className="list">
                 {todos.map((todo) => (
