@@ -4,7 +4,7 @@ import { IoLogOutOutline } from "react-icons/io5";
 import { MdSpaceDashboard } from "react-icons/md";
 import "./style.css";
 
-const Todos = ({ role }) => {
+const Navbar = ({ role }) => {
   const navigate = useNavigate();
 
   const logout = () => {
@@ -15,10 +15,10 @@ const Todos = ({ role }) => {
 
   return (
     <div className="navbar">
-      {role == 'admin' && <MdSpaceDashboard className="dashboardLogo" onClick={() => navigate("/dashboard")} />}
+      {role === 'admin' && <MdSpaceDashboard className="dashboardLogo" onClick={() => navigate("/dashboard")} />}
       <IoLogOutOutline className="logoutLogo" onClick={logout} />
     </div>
   );
 };
 
-export default Todos;
+export default Navbar;
