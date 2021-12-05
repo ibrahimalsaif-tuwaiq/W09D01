@@ -14,13 +14,21 @@ const Navbar = ({ role, page }) => {
     navigate("/login");
   };
 
-  return (
+  return role ? (
     <div className="navbar">
-      {page === 'Dashboard' && (<AiFillHome className="homeLogo" onClick={() => navigate("/")} />)}
-      {page === 'User' && (<AiFillHome className="homeLogo" onClick={() => navigate("/")} />)}
-      {page === 'Todos' && (role === 'admin' && <MdSpaceDashboard className="dashboardLogo" onClick={() => navigate("/dashboard")} />)}
+      {page !== "Todos" && (
+        <AiFillHome className="homeLogo" onClick={() => navigate("/")} />
+      )}
+      {page === "Todos" && role === "admin" && (
+        <MdSpaceDashboard
+          className="dashboardLogo"
+          onClick={() => navigate("/dashboard")}
+        />
+      )}
       <IoLogOutOutline className="logoutLogo" onClick={logout} />
     </div>
+  ) : (
+    ""
   );
 };
 

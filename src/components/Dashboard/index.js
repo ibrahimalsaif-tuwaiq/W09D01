@@ -16,6 +16,7 @@ const Dashboard = () => {
     const StorgeRole = localStorage.getItem("role");
     setRole(StorgeRole);
     getUsers(StorgeToken);
+    // eslint-disable-next-line
   }, []);
 
   const getUsers = async (token) => {
@@ -55,15 +56,14 @@ const Dashboard = () => {
           text: "The user has been deleted",
           icon: "success",
           confirmButtonText: "OK",
-          confirmButtonColor: "#457B9D",
+          confirmButtonColor: "#006d77",
         });
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire({
           title: "Cancelled",
-          text: "The user is safe :)",
           icon: "error",
           confirmButtonText: "OK",
-          confirmButtonColor: "#457B9D",
+          confirmButtonColor: "#006d77",
         });
       }
     });
@@ -80,7 +80,7 @@ const Dashboard = () => {
           </h1>
         ) : (
           <div className="ItemsCon">
-            {users && (
+            {users ? (
               <ul className="list">
                 {users.map((user) => (
                   <div key={user._id} className="listItem">
@@ -102,6 +102,8 @@ const Dashboard = () => {
                   </div>
                 ))}
               </ul>
+            ) : (
+              <h2>There no users!!</h2>
             )}
           </div>
         )}

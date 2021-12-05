@@ -12,6 +12,7 @@ const Signup = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     setToken(token);
+    // eslint-disable-next-line
   }, []);
 
   const signup = async () => {

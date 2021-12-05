@@ -13,6 +13,7 @@ const Login = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     setToken(token);
+    // eslint-disable-next-line
   }, []);
 
   const login = async () => {

@@ -10,7 +10,6 @@ const Todos = () => {
   const [role, setRole] = useState("");
   const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState("");
-  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const StorgeToken = localStorage.getItem("token");
@@ -18,6 +17,7 @@ const Todos = () => {
     const StorgeRole = localStorage.getItem("role");
     setRole(StorgeRole);
     getTodos(StorgeToken);
+    // eslint-disable-next-line
   }, []);
 
   const getTodos = async (token) => {
@@ -29,7 +29,7 @@ const Todos = () => {
       });
       setTodos(res.data);
     } catch (error) {
-      setMessage(error.response.data.message);
+      console.log(error);
     }
   };
 
@@ -55,10 +55,12 @@ const Todos = () => {
   const updateTodo = async (id) => {
     try {
       const { value: updatedTodo } = await Swal.fire({
-        title: "Input the new todo",
+        title: "Updated Todo",
         input: "text",
-        inputLabel: "Updated Todo",
-        inputPlaceholder: "todo",
+        inputPlaceholder: "Input the new todo",
+        showCancelButton: true,
+        confirmButtonColor: "#006d77",
+        reverseButtons: true,
       });
 
       if (updatedTodo) {
@@ -99,8 +101,7 @@ const Todos = () => {
       <div className="wrapper">
         {!token ? (
           <h1>
-            You are not logeddin yet, so <Link to="/login">login</Link> or
-            <Link to="/signup">signup</Link>
+            You are not logeddin yet, so <Link to="/login">login</Link> or <Link to="/signup">signup</Link>
           </h1>
         ) : (
           <div className="ItemsCon">
@@ -114,7 +115,7 @@ const Todos = () => {
                 ADD
               </button>
             </div>
-            {todos ? (
+            {todos.length ? (
               <ul className="list">
                 {todos.map((todo) => (
                   <div key={todo._id} className="listItem">
@@ -137,7 +138,7 @@ const Todos = () => {
                 ))}
               </ul>
             ) : (
-              <div className="message">{message}</div>
+              <h2>You don't have any todos yet!!</h2>
             )}
           </div>
         )}

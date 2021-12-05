@@ -8,7 +8,6 @@ const User = () => {
   const [token, setToken] = useState("");
   const [role, setRole] = useState("");
   const [todos, setTodos] = useState([]);
-  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const StorgeToken = localStorage.getItem("token");
@@ -16,6 +15,7 @@ const User = () => {
     const StorgeRole = localStorage.getItem("role");
     setRole(StorgeRole);
     getUserTodos(StorgeToken);
+    // eslint-disable-next-line
   }, []);
 
   const getUserTodos = async (token) => {
@@ -30,7 +30,7 @@ const User = () => {
       );
       setTodos(res.data);
     } catch (error) {
-      setMessage(error.response.data.message);
+      console.log(error);
     }
   };
 
@@ -64,7 +64,7 @@ const User = () => {
           </h1>
         ) : (
           <div className="ItemsCon">
-            {todos ? (
+            {todos.length ? (
               <ul className="list">
                 {todos.map((todo) => (
                   <div key={todo._id} className="listItem">
@@ -81,7 +81,7 @@ const User = () => {
                 ))}
               </ul>
             ) : (
-              <div className="message">{message}</div>
+              <h2>The user doesn't have any todos yet!!</h2>
             )}
           </div>
         )}
