@@ -4,6 +4,10 @@ This is an app for a todo list with authentication and authorization in Express 
 
 While running locally: http://localhost:3000
 
+## UML Diagram
+
+![UML digram](https://github.com/ibrahimalsaif-tuwaiq/W09D01/blob/main/public/digrams/todos%20frontend%20UML.jpg?raw=true)
+
 ## Getting Started
 
 ### Installing Dependencies
